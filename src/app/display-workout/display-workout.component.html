@@ -1,4 +1,4 @@
-<section class="p-2 sm:p-6 lg:p-12 mt-6 md:mt-0 text-white bg-gray-800">
+<!-- <section class="p-2 sm:p-6 lg:p-12 mt-6 md:mt-0 text-white bg-gray-800">
     <h1 class="text-3xl uppercase font-semibold text-yellow-300">
         Explore Workouts
     </h1>
@@ -69,4 +69,35 @@
             <option value="20">20</option>
         </select>
     </div>
-</section>
+</section> -->
+
+<table class="mt-6 w-full bg-gray-700 border border-yellow-300">
+    <thead>
+        <tr class="text-yellow-300">
+            <th class="p-3">Name</th>
+            <th class="p-3">Workouts</th>
+            <th class="p-3">Number of Workouts</th>
+            <th class="p-3">Total Workout Minutes</th>
+            <th class="p-3">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of paginatedData; trackBy: trackByFn" class="border border-gray-800 p-3 text-white">
+            <td class="p-3 text-center">
+                <a routerLink="/{{user.name}}" class="p-3 text-center flex items-center justify-center underline text-blue-400">
+                    {{ user.name }}
+                </a>
+            </td>
+            <td class="p-3 text-center">{{ getWorkoutTypes(user.workouts) }}</td>
+            <td class="p-3 text-center">{{ user.workouts.length }}</td>
+            <td class="p-3 text-center">{{ getTotalMinutes(user.workouts) }}</td>
+            <td class="p-3 text-center">
+                <button class="p-2 border border-yellow-500 hover:bg-yellow-500 hover:text-white transition-all rounded-md" (click)="deleteUser(user.id)">
+                    Delete
+                </button>
+                
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
