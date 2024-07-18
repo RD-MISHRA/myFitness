@@ -1,0 +1,39 @@
+<section class="p-2 sm:p-6 lg:p-12 grid grid-cols-1 lg:grid-cols-2 mt-6 md:mt-0 justify-center items-center bg-gray-800 text-white">
+    <div class="flex flex-col items-center">
+        <h1 class="text-3xl uppercase font-semibold text-center text-yellow-300">
+            Add Workout here
+        </h1>
+        
+        <form [formGroup]="workoutForm" (submit)="onSubmit()" class="mt-6 flex flex-col items-start gap-3 text-lg">
+            <label for="name" class="text-white">Username</label>
+            <input id="name" formControlName="name" type="text" placeholder="Username" class="px-4 py-3 focus:outline-none border-2 border-yellow-300 rounded bg-gray-700 text-white" />
+            
+            <label for="duration" class="text-white">Duration (in minutes)</label>
+            <input id="duration" formControlName="duration" type="number" placeholder="Duration" class="px-4 py-3 focus:outline-none border-2 border-yellow-300 rounded bg-gray-700 text-white" min="0" />
+            
+            <label for="type" class="text-white">Workout Type</label>
+            <select id="type" class="p-2 bg-gray-700 text-white border-2 border-yellow-300" formControlName="type">
+                <option value="Gym">Gym</option>
+                <option value="Cycling">Cycling</option>
+                <option value="Swimming">Swimming</option>
+                <option value="Running">Running</option>
+                <option value="Meditation">Meditation</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Hiking">Hiking</option>
+                <option value="Walking">Walking</option>
+                <option value="Dancing">Dancing</option>
+                <option value="Boxing">Boxing</option>
+                <option value="Pilates">Pilates</option>
+                <option value="Rowing">Rowing</option>
+                <option value="Climbing">Climbing</option>
+                <option value="Skiing">Skiing</option>
+                <option value="Snowboarding">Snowboarding</option>
+            </select>
+            
+            <button type="submit" class="flex items-center gap-1 bg-cyan-950 text-white p-2 rounded hover:bg-cyan-700 transition-all">
+                <i class="pi pi-check-circle" style="font-size: 1rem;"></i>
+                <span>Submit</span>
+            </button>
+        </form>
+    </div>
+</section>
