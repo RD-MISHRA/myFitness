@@ -1,43 +1,71 @@
-# Fit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+# Project Title
 
-## Development Server
+A brief description of what this project does and who it's for
 
-Run `ng serve` for a development server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code Scaffolding
+## Run Locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clone the project
 
-## Build
+```bash
+  git clone https://github.com/RD-MISHRA/myFitness
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Go to the project directory
 
-## Running Unit Tests
+```bash
+  cd myFitness
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install dependencies
 
-## Running End-to-End Tests
+```bash
+  npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Start the myFitness App
 
-## Further Help
+```bash
+  ng serve 
+```
+App will open here
 
-To get more help on the Angular CLI, use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+http://localhost:4200/
+```
 
-## Common Issues and Fixes
 
-### Vite Serving Allow List Error
 
-If you encounter an error stating, "The request URL is outside of Vite serving allow list," it might be due to Vite's auto workspace root detection. This can often be fixed by specifying the allowed directories for the Vite server in your configuration.
 
-### Serve Command Requires Angular Project
 
-If you see an error like "The serve command requires to be run in an Angular project," ensure you are running the command in the root directory of your Angular project. This error can occur if you are in the wrong directory or if the project configuration files are missing.
+## Running Tests
 
-### Angular CLI Configuration
+To run tests, run the following command
 
-Ensure your Angular project is using the correct configuration files. The Angular CLI uses `angular.json` for its configuration, so make sure this file is present and correctly set up in your project directory.
+```bash
+  ng test
+```
 
-For more detailed troubleshooting and community support, you can visit the [Angular CLI Issues](https://github.com/angular/angular-cli/issues) page on GitHub.
+## Test results
+
+
+![Screenshot (1147)](https://github.com/user-attachments/assets/7b5246ff-3ac6-4fc8-adf4-fe0702109609)
+
+![Screenshot (1146)](https://github.com/user-attachments/assets/80bc36b3-35b3-4b4d-955d-309d90eef99d)
+
+##App
+![Screenshot (1143)](https://github.com/user-attachments/assets/af6eb243-ff0d-481c-b94d-89e40c50ed5e)
+
+
+![Screenshot (1144)](https://github.com/user-attachments/assets/3f4ba099-96cf-42b4-b34f-ba0a068e7378)
+
+
+![Screenshot (1145)](https://github.com/user-attachments/assets/2029122a-868d-4e24-b29a-4d35739bc692)
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
