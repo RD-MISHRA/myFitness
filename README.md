@@ -40,8 +40,8 @@ http://localhost:4200/
 
 
 ## Running Tests
-
-To run tests, run the following command
+## Make sute that you are in myFitness dir
+To run tests, run the following command 
 
 ```bash
   ng test
@@ -62,6 +62,10 @@ To run tests, run the following command
 
 
 ![Screenshot (1145)](https://github.com/user-attachments/assets/2029122a-868d-4e24-b29a-4d35739bc692)
+![Screenshot (1149)](https://github.com/user-attachments/assets/7acfb4c7-87e0-4b42-bd78-b5f4185b4626)
+![Screenshot 2024-07-19 130132](https://github.com/user-attachments/assets/ce83bcba-b2e9-4cf3-88f6-3bf0fc4595dc)
+
+![Screenshot (1150)](https://github.com/user-attachments/assets/d3fd4ea9-b604-410f-866c-85178b0078d9)
 
 
 
