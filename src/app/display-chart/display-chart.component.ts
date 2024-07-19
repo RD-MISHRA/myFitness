@@ -40,14 +40,14 @@ export class DisplayChartComponent implements OnInit, AfterViewInit {
       plugins: {
         legend: {
           labels: {
-            color: '#FFFFFF' // Set legend text color to white
+            color: '#FFFFFF' 
           }
         }
       },
       scales: {
         x: {
           ticks: {
-            color: '#FFFFFF' // Set x-axis labels color to white
+            color: '#FFFFFF' 
           },
           grid: {
             color: '#ebedef'
@@ -55,7 +55,7 @@ export class DisplayChartComponent implements OnInit, AfterViewInit {
         },
         y: {
           ticks: {
-            color: '#FFFFFF' // Set y-axis labels color to white
+            color: '#FFFFFF' 
           },
           grid: {
             color: '#ebedef'

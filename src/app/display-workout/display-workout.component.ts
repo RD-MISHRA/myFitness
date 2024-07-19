@@ -75,7 +75,7 @@ export class DisplayWorkoutComponent {
   }
 
   currentPage = 1;
-  itemsPerPage = 2;
+  itemsPerPage = 3;
 
   prevPage() {
     this.currentPage--;
@@ -104,5 +104,17 @@ export class DisplayWorkoutComponent {
 
   trackByFn(index: number, item: UserData): number {
     return item.id;
+  }
+
+  deleteUser(id: number) {
+    if (id <= 3) {
+      alert('Top 3 users cannot be deleted');
+      return;
+    }
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.userData = this.userData?.filter(user => user.id !== id) || null;
+      localStorage.setItem('userData', JSON.stringify(this.userData));
+    }
   }
 }

@@ -1,7 +1,10 @@
+
+
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { LocalStorageService } from '../local-storage.service';
 
 interface Workout {
   type: string;
@@ -30,12 +33,15 @@ export class AddWorkoutComponent {
 
   userData: UserData[] | null = null;
 
-  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: any) {}
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: any,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      const storedData: UserData[] = JSON.parse(localStorage.getItem('userData') || '[]');
-      this.userData = storedData.length ? storedData : null;
+      this.userData = this.localStorageService.getData('userData');
     }
   }
 
@@ -51,8 +57,7 @@ export class AddWorkoutComponent {
     };
 
     if (isPlatformBrowser(this.platformId)) {
-      const storedData = localStorage.getItem('userData');
-      let userData: UserData[] = storedData ? JSON.parse(storedData) : [];
+      let userData: UserData[] = this.localStorageService.getData('userData') || [];
 
       let user = userData.find((u: UserData) => u.name === formValue.name);
       if (!user) {
@@ -66,11 +71,9 @@ export class AddWorkoutComponent {
 
       let existingWorkout = user.workouts.find((w: Workout) => w.type === formValue.type);
       if (existingWorkout) {
-        // Add time to existing workout
         existingWorkout.minutes += parseInt(formValue.duration, 10);
         alert(`Workout time added to existing workout: ${formValue.type}`);
       } else {
-        // Add new workout
         user.workouts.push({
           type: formValue.type,
           minutes: parseInt(formValue.duration, 10),
@@ -78,7 +81,7 @@ export class AddWorkoutComponent {
         alert('Workout added successfully!');
       }
 
-      localStorage.setItem('userData', JSON.stringify(userData));
+      this.localStorageService.saveData('userData', userData);
     }
   }
 }

@@ -1,25 +1,31 @@
+
 <mat-sidenav-container class="h-screen flex">
-  <mat-sidenav mode="side" [opened]="true" class="bg-gray-200 text-white custom-sidebar">
-    <div class="p-4 flex flex-col items-center">
+  <mat-sidenav mode="side" [opened]="true" class="bg-gray-200 text-white custom-sidebar w-64">
+    <div class="p-4 flex flex-col items-center w-full">
       <img src="https://res.cloudinary.com/dm62dlqls/image/upload/v1721310543/images_1_gglclj.png" alt="My Image" class="w-32 h-auto rounded-lg">
       <ul class="mt-4 space-y-2 w-full">
-        <li class="py-2 px-4 hover:bg-gray-700 flex items-center">
-          <span class="material-icons mr-2">add</span>
-          <a routerLink="/add-workout" class="text-white">Add Workout</a>
+        <li class="hover:bg-gray-700 w-full">
+          <a routerLink="/add-workout" class="text-white flex items-center py-2 px-4 w-full h-full">
+            <span class="material-icons mr-2">add</span>
+            Add Workout
+          </a>
         </li>
-        <li class="py-2 px-4 hover:bg-gray-700 flex items-center">
-          <span class="material-icons mr-2">list</span>
-          <a routerLink="/display-workout" class="text-white">Display Workouts</a>
+        <li class="hover:bg-gray-700 w-full">
+          <a routerLink="/display-workout" class="text-white flex items-center py-2 px-4 w-full h-full">
+            <span class="material-icons mr-2">list</span>
+            Display Workouts
+          </a>
         </li>
-        <li class="py-2 px-4 hover:bg-gray-700 flex items-center">
-          <span class="material-icons mr-2">bar_chart</span>
-          <a routerLink="/display-chart" class="text-white">Display Chart</a>
+        <li class="hover:bg-gray-700 w-full">
+          <a routerLink="/display-chart" class="text-white flex items-center py-2 px-4 w-full h-full">
+            <span class="material-icons mr-2">bar_chart</span>
+            Display Chart
+          </a>
         </li>
       </ul>
     </div>
   </mat-sidenav>
   <mat-sidenav-content class="flex-1 p-4">
-    
     <div class="content">
       <router-outlet></router-outlet>
     </div>

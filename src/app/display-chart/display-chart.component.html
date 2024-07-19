@@ -1,38 +1,8 @@
-<!-- <div class="p-4 bg-gray-800 text-white">
-    <h2 class="text-2xl font-bold text-yellow-300">Users</h2>
-    <p class="text-sm text-gray-400 mt-2">Click on a user to see their workout charts</p>
-    <ul class="mt-4 space-y-2">
-        <li *ngFor="let user of userData" (click)="selectUser(user)" class="cursor-pointer p-2 bg-blue-600 hover:bg-blue-700 rounded">
-            {{ user.name }}
-        </li>
-    </ul>
-
-    <div *ngIf="selectedUser" class="mt-6">
-        <h3 class="text-xl font-semibold text-green-500">Workouts for {{ selectedUser.name }}</h3>
-        
-        <div class="chart-container">
-            <p-chart type="bar" [data]="barChartData" [options]="chartOptions" class="bar-chart"></p-chart>
-            <span class="activity-name">Fitness Activity Name</span>
-        </div>
-        
-        <div class="chart-container">
-            <p-chart type="pie" [data]="pieChartData" [options]="chartOptions" class="pie-chart"></p-chart>
-            <span class="activity-name">Fitness Activity Name</span>
-        </div>
-        
-        <div class="chart-container">
-            <p-chart type="line" [data]="lineChartData" [options]="chartOptions" class="line-chart"></p-chart>
-            <span class="activity-name">Fitness Activity Name</span>
-        </div>
-    </div>
-</div> -->
-
-
 <div class="p-4 bg-gray-800 text-white">
-    <h2 class="text-2xl font-bold text-yellow-300">Users</h2>
+    <h2 class="text-2xl font-bold text-teal-400">Users</h2>
     <p class="text-sm text-gray-400 mt-2">Click on a user to see their workout charts</p>
     <ul class="mt-4 space-y-2">
-        <li *ngFor="let user of userData" (click)="selectUser(user)" class="cursor-pointer p-2 bg-blue-600 hover:bg-blue-700 rounded">
+        <li *ngFor="let user of userData" (click)="selectUser(user)" class="cursor-pointer p-2 bg-teal-600 hover:bg-teal-700 rounded">
             {{ user.name }}
         </li>
     </ul>
@@ -40,19 +10,19 @@
     <div *ngIf="selectedUser" class="mt-6">
         <h3 class="text-xl font-semibold text-green-500">Workouts for {{ selectedUser.name }}</h3>
         
-        <div class="chart-container">
+        <div class="chart-container mt-4 w-148 h-148">
             <p-chart type="bar" [data]="barChartData" [options]="chartOptions" class="bar-chart"></p-chart>
-            <span class="activity-name">Fitness Activity Name</span>
+            <span class="activity-name text-gray-300">Fitness Activity Name</span>
         </div>
         
-        <div class="chart-container">
+        <div class="chart-container mt-4 w-148 h-148">
             <p-chart type="pie" [data]="pieChartData" [options]="chartOptions" class="pie-chart"></p-chart>
-            <span class="activity-name">Fitness Activity Name</span>
+            <span class="activity-name text-gray-300">Fitness Activity Name</span>
         </div>
         
-        <div class="chart-container">
+        <div class="chart-container mt-4 w-148 h-148">
             <p-chart type="line" [data]="lineChartData" [options]="chartOptions" class="line-chart"></p-chart>
-            <span class="activity-name">Fitness Activity Name</span>
+            <span class="activity-name text-gray-300">Fitness Activity Name</span>
         </div>
     </div>
 </div>

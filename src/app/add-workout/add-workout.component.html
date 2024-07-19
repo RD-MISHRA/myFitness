@@ -1,18 +1,24 @@
-<section class="p-2 sm:p-6 lg:p-12 grid grid-cols-1 lg:grid-cols-2 mt-6 md:mt-0 justify-center items-center bg-gray-800 text-white">
+<section class="p-2 sm:p-6 lg:p-12 grid grid-cols-1 justify-center items-center bg-gray-800 text-white">
     <div class="flex flex-col items-center">
-        <h1 class="text-3xl uppercase font-semibold text-center text-yellow-300">
+        <h1 class="text-4xl uppercase font-bold text-center text-teal-400 mb-6">
             Add Workout here
         </h1>
         
-        <form [formGroup]="workoutForm" (submit)="onSubmit()" class="mt-6 flex flex-col items-start gap-3 text-lg">
+        <form [formGroup]="workoutForm" (submit)="onSubmit()" class="mt-6 flex flex-col items-start gap-4 text-lg w-full max-w-lg">
             <label for="name" class="text-white">Username</label>
-            <input id="name" formControlName="name" type="text" placeholder="Username" class="px-4 py-3 focus:outline-none border-2 border-yellow-300 rounded bg-gray-700 text-white" />
+            <div class="relative w-full">
+                <i class="pi pi-user absolute left-3 top-1/2 transform -translate-y-1/2 text-yellow-300"></i>
+                <input id="name" formControlName="name" type="text" placeholder="Username" class="w-full pl-10 pr-4 py-3 focus:outline-none border-2 border-teal-400 rounded bg-gray-700 text-white" />
+            </div>
             
             <label for="duration" class="text-white">Duration (in minutes)</label>
-            <input id="duration" formControlName="duration" type="number" placeholder="Duration" class="px-4 py-3 focus:outline-none border-2 border-yellow-300 rounded bg-gray-700 text-white" min="0" />
+            <div class="relative w-full">
+                <i class="pi pi-clock absolute left-3 top-1/2 transform -translate-y-1/2 text-yellow-300"></i>
+                <input id="duration" formControlName="duration" type="number" placeholder="Duration" class="w-full pl-10 pr-4 py-3 focus:outline-none border-2 border-teal-400 rounded bg-gray-700 text-white" min="0" />
+            </div>
             
             <label for="type" class="text-white">Workout Type</label>
-            <select id="type" class="p-2 bg-gray-700 text-white border-2 border-yellow-300" formControlName="type">
+            <select id="type" class="w-full p-2 bg-gray-700 text-white border-2 border-teal-400 rounded" formControlName="type">
                 <option value="Gym">Gym</option>
                 <option value="Cycling">Cycling</option>
                 <option value="Swimming">Swimming</option>
@@ -30,8 +36,8 @@
                 <option value="Snowboarding">Snowboarding</option>
             </select>
             
-            <button type="submit" class="flex items-center gap-1 bg-cyan-950 text-white p-2 rounded hover:bg-cyan-700 transition-all">
-                <i class="pi pi-check-circle" style="font-size: 1rem;"></i>
+            <button type="submit" class="flex items-center gap-2 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-500 transition-all w-full justify-center">
+                <i class="pi pi-check-circle" style="font-size: 1.25rem;"></i>
                 <span>Submit</span>
             </button>
         </form>

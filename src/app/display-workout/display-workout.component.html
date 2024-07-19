@@ -1,27 +1,28 @@
+
 <section class="p-2 sm:p-6 lg:p-12 mt-6 md:mt-0 text-white bg-gray-800">
-    <h1 class="text-3xl uppercase font-semibold text-yellow-300">
+    <h1 class="text-3xl uppercase font-semibold text-teal-400">
         Explore Workouts
     </h1>
 
     <form [formGroup]="filterForm" class="mt-6 flex items-center gap-3">
         <input formControlName="name" type="text" placeholder="Search by name"
-            class="py-2 px-4 focus:outline-none border border-yellow-300 bg-gray-700 text-white" />
-        <select class="p-2 bg-gray-700 text-white border border-yellow-300" formControlName="type">
+            class="py-2 px-4 focus:outline-none border border-teal-400 bg-gray-700 text-white" />
+        <select class="p-2 bg-gray-700 text-white border border-teal-400" formControlName="type">
             <option value="Gym">Gym</option>
-                <option value="Cycling">Cycling</option>
-                <option value="Swimming">Swimming</option>
-                <option value="Running">Running</option>
-                <option value="Meditation">Meditation</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Hiking">Hiking</option>
-                <option value="Walking">Walking</option>
-                <option value="Dancing">Dancing</option>
-                <option value="Boxing">Boxing</option>
-                <option value="Pilates">Pilates</option>
-                <option value="Rowing">Rowing</option>
-                <option value="Climbing">Climbing</option>
-                <option value="Skiing">Skiing</option>
-                <option value="Snowboarding">Snowboarding</option>
+            <option value="Cycling">Cycling</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Running">Running</option>
+            <option value="Meditation">Meditation</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Hiking">Hiking</option>
+            <option value="Walking">Walking</option>
+            <option value="Dancing">Dancing</option>
+            <option value="Boxing">Boxing</option>
+            <option value="Pilates">Pilates</option>
+            <option value="Rowing">Rowing</option>
+            <option value="Climbing">Climbing</option>
+            <option value="Skiing">Skiing</option>
+            <option value="Snowboarding">Snowboarding</option>
         </select>
     </form>
 
@@ -31,38 +32,42 @@
     <div *ngIf="filteredUserData().length > 0">
         <p class="mt-6 text-xl text-center text-green-500">Workouts found: {{ filteredUserData().length }}</p>
 
-        <table class="mt-6 w-full bg-gray-700 border border-yellow-300">
+        <table class="mt-6 w-full bg-gray-700 border border-teal-400">
             <thead>
-                <tr class="text-yellow-300">
+                <tr class="text-teal-400">
                     <th class="p-3">Name</th>
                     <th class="p-3">Workouts</th>
                     <th class="p-3">Number of Workouts</th>
                     <th class="p-3">Total Workout Minutes</th>
+                    <th class="p-3">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let user of paginatedData; trackBy: trackByFn" class="border border-gray-800 p-3 text-white">
                     <td class="p-3 text-center">
-                        <a routerLink="/{{user.name}}" class="p-3 text-center flex items-center justify-center underline text-blue-400">
+                        <a routerLink="/{{user.name}}" class="p-3 text-center flex items-center justify-center underline text-teal-400">
                             {{ user.name }}
                         </a>
                     </td>
                     <td class="p-3 text-center">{{ getWorkoutTypes(user.workouts) }}</td>
                     <td class="p-3 text-center">{{ user.workouts.length }}</td>
                     <td class="p-3 text-center">{{ getTotalMinutes(user.workouts) }}</td>
+                    <td class="p-3 text-center">
+                        <button (click)="deleteUser(user.id)" class="p-2 bg-teal-400 text-black rounded">Delete</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div class="mt-6 flex items-center justify-center gap-3">
-        <button class="p-2 border border-yellow-300 hover:bg-yellow-300 hover:text-gray-800 transition-all" (click)="prevPage()"
+        <button class="p-2 border border-teal-400 hover:bg-teal-400 hover:text-gray-800 transition-all" (click)="prevPage()"
             [disabled]="currentPage === 1">Previous</button>
-        <button class="p-2 border border-yellow-300 hover:bg-yellow-300 hover:text-gray-800 transition-all" (click)="nextPage()"
+        <button class="p-2 border border-teal-400 hover:bg-teal-400 hover:text-gray-800 transition-all" (click)="nextPage()"
             [disabled]="currentPage === totalPages">Next</button>
         <p class="text-white">Results per page: </p>
-        <select name="noOfPages" id="noOfPages" class="bg-gray-700 text-white border border-yellow-300" (change)="changeItemsPerPage($event)">
-            <option value="2">2</option>
+        <select name="noOfPages" id="noOfPages" class="bg-gray-700 text-white border border-teal-400" (change)="changeItemsPerPage($event)">
+            <option value="3">3</option>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>

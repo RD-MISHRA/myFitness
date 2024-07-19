@@ -102,8 +102,7 @@ import { DisplayChartComponent } from './display-chart/display-chart.component';
   declarations: [
     AppComponent,
     SidebarComponent,
-   
-    // Remove DisplayWorkoutComponent and DisplayChartComponent from here
+  
   ],
   imports: [
     BrowserModule,
