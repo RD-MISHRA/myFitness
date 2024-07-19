@@ -40,7 +40,11 @@ http://localhost:4200/
 
 
 ## Running Tests
-## Make sute that you are in myFitness dir
+## Make sure that you are in myFitness dir
+to reach at myFitness
+```bash
+  cd myFitness
+```
 To run tests, run the following command 
 
 ```bash
